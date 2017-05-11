@@ -35,8 +35,7 @@ module.exports = function(irc, network) {
 		}
 
 		var msg = new Msg({
-			type: Msg.Type.TOGGLE,
-			time: ""
+			type: Msg.Type.TOGGLE
 		});
 		chan.messages.push(msg);
 		client.emit("msg", {
