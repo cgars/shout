@@ -17,9 +17,11 @@ ENV SHOUT_HOME /home/shout/data
 
 # Expose HTTP
 EXPOSE 9000
-
+RUN npm install
+RUN npm run build
 # Drop root.
 USER shout
 
+
 # Don't use an entrypoint here. It makes debugging difficult.
-CMD node index.js --home $SHOUT_HOME
+CMD node index.js --home $SHOUT_HOME --private
